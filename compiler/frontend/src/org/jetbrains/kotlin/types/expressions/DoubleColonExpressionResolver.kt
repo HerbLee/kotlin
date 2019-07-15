@@ -486,7 +486,7 @@ class DoubleColonExpressionResolver(
         when (val descriptor = type.constructor.declarationDescriptor) {
             is ClassDescriptor -> {
                 if (genericArrayClassLiteralSupport.isEnabled ||
-                    !languageVersionSettings.supportsFeature(LanguageFeature.BareArrayClassLiteral)
+                    !languageVersionSettings.supportsFeature(LanguageFeature.ProhibitGenericArrayClassLiteral)
                 ) {
                     if (KotlinBuiltIns.isNonPrimitiveArray(descriptor)) {
                         return type.arguments.none { typeArgument ->
